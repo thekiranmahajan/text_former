@@ -1,6 +1,5 @@
 import React from 'react'
 import { SiGitextensions, SiHomebridge, SiInformatica } from "react-icons/si";
-// import { FaFire, FaPoo } from "react-icons/fa";
 const Sidebar = () => {
   return (
     <div
@@ -8,13 +7,13 @@ const Sidebar = () => {
                     flex flex-col 
                     bg-gray-900 text-white shadow-lg"
     >
-      <SideBarIcon icon={<SiGitextensions size="28" />} />
-      <SideBarIcon icon={<SiHomebridge size="32" />} />
-      <SideBarIcon icon={<SiInformatica size="20" />} />
+      <SidebarIcon icon={<SiGitextensions size="28" />} />
+      <SidebarIcon icon={<SiHomebridge size="32" />} />
+      <SidebarIcon icon={<SiInformatica size="20" />} />
     </div>
   );
 };
-const SideBarIcon = ({ icon }) => (
+const SidebarIcon = ({ icon }) => (
   <div className="sidebar-icon group">{icon}</div>
 );
 
