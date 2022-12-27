@@ -5,11 +5,11 @@ import { SiGitextensions, SiHomebridge, SiInformatica } from "react-icons/si";
 const Sidebar = () => {
   return (
     <div
-      className=" select-none	 container fixed top-0 left-0 h-screen w-12 lg:w-16
+      className=" h-32 scrollbar scrollbar-thumb-gray-900 scrollbar-track-gray-100 absolute top-10 select-none	 container fixed top-0 left-0 h-screen w-12 lg:w-16
                     bg-gray-900 flex flex-col 
                       text-white shadow-2xl "
     >
-      <div className="mt-4 lg:mt-6">
+      <div className="">
         <a href="#" className="">
           <AllIcons icon={<SiGitextensions size="28" />} text={"TextFormer"} />
         </a>
@@ -21,7 +21,7 @@ const Sidebar = () => {
         </a>
         <div>
           <img
-            className=" select-none	flex  h-10 lg:h-12 w-10 lg:w-12  mx-auto lg:mt-[26rem] mt-[26rem]"
+            className=" select-none	flex  h-10 lg:h-12 w-10 lg:w-12  mx-auto lg:mt-[23rem] mt-[24rem]"
             src={pic}
             alt="Author: Kiran Mahajan"
           />
@@ -33,7 +33,7 @@ const Sidebar = () => {
 const AllIcons = ({ icon, text }) => (
   <div
     className="relative flex items-center justify-center 
-             h-10 lg:h-12 w-10 lg:w-12 mt-3 mb-5 mx-auto shadow-lg
+             h-10 lg:h-12 w-10 lg:w-12 mb-5 mx-auto shadow-lg
                bg-gray-800 text-green-500
                hover:bg-green-600 hover:text-white 
                rounded-3xl hover:rounded-xl 
