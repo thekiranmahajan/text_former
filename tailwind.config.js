@@ -5,10 +5,7 @@ module.exports = {
     fontFamily: {
       Poppins: ["Poppins", "sans-serif"],
     },
-    variants: {
-      scrollbar: ["dark"],
-      extend: {},
-    },
+    extend: {},
   },
-  plugins: [require("tailwind-scrollbar")],
+  plugins: [require("tailwind-scrollbar")({ nocompatible: true })],
 };
