@@ -5,7 +5,7 @@ import { SiGitextensions, SiHomebridge, SiInformatica } from "react-icons/si";
 const Sidebar = () => {
   return (
     <div
-      className="container fixed top-0 left-0 h-screen w-12 lg:w-16
+      className=" select-none	 container fixed top-0 left-0 h-screen w-12 lg:w-16
                     bg-gray-900 flex flex-col 
                       text-white shadow-2xl "
     >
@@ -21,7 +21,7 @@ const Sidebar = () => {
         </a>
         <div>
           <img
-            className="flex  h-10 lg:h-12 w-10 lg:w-12  mx-auto lg:mt-[26rem] mt-[26rem]"
+            className=" select-none	flex  h-10 lg:h-12 w-10 lg:w-12  mx-auto lg:mt-[26rem] mt-[26rem]"
             src={pic}
             alt="Author: Kiran Mahajan"
           />
@@ -42,7 +42,7 @@ const AllIcons = ({ icon, text }) => (
   >
     {icon}
     <span
-      class="absolute w-auto p-2 m-2 min-w-max left-10
+      class="absolute w-auto p-2 m-2 min-w-max left-10 lg:left-14 lg:p-3
         rounded-md shadow-md
         text-green-500 bg-gray-900 
         text-xs font-bold
