@@ -4,27 +4,32 @@ import { SiGitextensions, SiHomebridge, SiInformatica } from "react-icons/si";
 
 const Sidebar = () => {
   return (
-    <div
-      className="top-10 select-none	z-50 container fixed left-0 h-screen w-12 lg:w-16
+    <div className="overflow-hidden scrollbar scrollbar-thumb-gray-900 scrollbar-track-gray-100">
+      <div
+        className=" relative top-10 select-none	 container fixed top-0 left-0 h-screen w-12 lg:w-16
                     bg-gray-900 flex flex-col 
                       text-white shadow-2xl "
-    >
-      <div className="">
-        <a href="#" className="">
-          <AllIcons icon={<SiGitextensions size="28" />} text={"TextFormer"} />
-        </a>
-        <a href="#" className="">
-          <AllIcons icon={<SiHomebridge size="28" />} text={"Home"} />
-        </a>
-        <a href="#" className="">
-          <AllIcons icon={<SiInformatica size="28" />} text={"About"} />
-        </a>
-        <div>
-          <img
-            className=" select-none	flex h-10 lg:h-12 w-10 lg:w-12  mx-auto lg:mt-[23rem] mt-[24rem]"
-            src={pic}
-            alt="Author: Kiran Mahajan"
-          />
+      >
+        <div className="">
+          <a href="#" className="">
+            <AllIcons
+              icon={<SiGitextensions size="28" />}
+              text={"TextFormer"}
+            />
+          </a>
+          <a href="#" className="">
+            <AllIcons icon={<SiHomebridge size="28" />} text={"Home"} />
+          </a>
+          <a href="#" className="">
+            <AllIcons icon={<SiInformatica size="28" />} text={"About"} />
+          </a>
+          <div>
+            <img
+              className=" select-none	flex  h-10 lg:h-12 w-10 lg:w-12  mx-auto lg:mt-[23rem] mt-[24rem]"
+              src={pic}
+              alt="Author: Kiran Mahajan"
+            />
+          </div>
         </div>
       </div>
     </div>
