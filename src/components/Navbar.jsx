@@ -44,7 +44,8 @@ const AllIcons = ({ icon, text }) => (
         rounded-md shadow-md
         text-green-400 bg-gray-900 
         text-sm lg:text-base  font-bold
-        transition-all duration-500 scale-0 origin-bottom; group-hover:scale-100"
+        transition-all duration-500 scale-0 
+        origin-bottom group-hover:scale-100"
     >
       {text}
     </span>
