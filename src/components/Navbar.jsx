@@ -40,7 +40,7 @@ const AllIcons = ({ icon, text }) => (
   >
     {icon}
     <span
-      class="absolute w-auto p-3 min-w-max lg:p-4
+      className="absolute w-auto p-3 min-w-max lg:p-4
         rounded-md shadow-md
         text-green-400 bg-gray-900 
         text-sm lg:text-base  font-bold
