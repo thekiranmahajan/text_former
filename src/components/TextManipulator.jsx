@@ -31,7 +31,7 @@ const TextBox = () => {
           value={text}
           id="Textbox"
           rows="10"
-          className="relative mt-10 text-white bg-gray-600 w-[45rem] h-64 p-2 border-lime-100 rounded-lg focus:outline-none focus:shadow-outline-blue-500"
+          className="relative mt-10 border-2 max-h-96 border-green-400 text-white bg-gray-600 w-[60rem] max-w-screen-lg h-64 p-2 border-lime-100 rounded-lg focus:outline-none focus:shadow-outline-blue-500"
         ></textarea>
       </div>
       <div className="btn flex space-x-4 mt-4  ">

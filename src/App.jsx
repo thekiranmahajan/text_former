@@ -1,11 +1,11 @@
-import TextBox from "./components/TextBox";
+import TextManipulator from "./components/TextManipulator";
 import Navbar from "./components/Navbar";
 function App() {
   return (
     <>
       <div className="overflow-hidden">
         <Navbar />
-        <TextBox />
+        <TextManipulator />
       </div>
     </>
   );
