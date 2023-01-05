@@ -72,12 +72,12 @@ const TextBox = () => {
           value={text}
           id="Textbox"
           rows="10"
-          className="relative mt-10 border-2 max-h-72 min-h-0 border-green-400 text-white bg-gray-600 w-[55rem] max-w-screen-lg h-64 p-2 border-lime-100 rounded-lg focus:outline-none focus:shadow-outline-blue-500"
+          className="relative mt-10 border-4 max-h-72 min-h-0 border-green-400 text-white bg-gray-600 w-[55rem] max-w-screen-lg h-64 p-2 border-lime-100 rounded-lg focus:outline-none focus:shadow-outline-blue-500"
         ></textarea>
       </div>
 
       {/* Buttons */}
-      <div className="btn flex space-x-4 mt-4 flex-row ">
+      <div className="flex space-x-6 mt-6 flex-row w-min ">
         <a
           onClick={inputToUpperCase}
           href="#_"
@@ -130,6 +130,7 @@ const TextBox = () => {
             Remove Extra Spaces
           </span>
         </a>
+        <br />
         <a
           onClick={inputToUnderscoreAdder}
           href="#_"
