@@ -1,34 +1,69 @@
 import React, { useState } from "react";
 
 const TextBox = () => {
+  // All button's logic is here
+
   const inputToUpperCase = () => {
     let userInput = text.toUpperCase();
     setText(userInput);
   };
-   const inputToLowerCase = () => {
-     let userInput = text.toLowerCase();
-     setText(userInput);
-   };
-   const inputToCLear = () => {
-     let userInput = "";
-     setText(userInput);
-   };
-   const inputToClipboard = () => {
-     let userInput = "";
-     setText(userInput);
-   };
- const inputToCamelCase = () => {
-   let userInput = "";
-   setText(userInput);
- };
+  const inputToLowerCase = () => {
+    let userInput = text.toLowerCase();
+    setText(userInput);
+  };
+  const inputToCLear = () => {
+    let userInput = "";
+    setText(userInput);
+  };
+  const inputToClipboard = () => {
+    navigator.clipboard.writeText(text);
+  };
+  const inputToCamelCase = () => {
+    let userInput = text
+      .toLowerCase()
+      .replace(/[-_]+/g, " ")
+      .replace(/[^\w\s]/g, "")
+      .replace(/ (.)/g, function ($1) {
+        return $1.toUpperCase();
+      })
+      .replace(/ /g, "");
+    setText(userInput);
+  };
+  const inputToFirstLetterCapital = () => {
+  let userInput = text
+    .toLowerCase()
+    .split(" ")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
+    setText(userInput);
 
+  };
+  const inputToRemoveExtraSpace = () => {
+    let userInput = text.replace(/\s{2,}/g,' ').trim();
+    setText(userInput);
+  };
+  const inputToUnderscoreAdder = () => {
+      let userInput = text.replace(/\s+/g, "_");
+      setText(userInput);
+  };
+  const inputToCut = () => {
+    let userInput = "";
+    setText(userInput);
+  };
+  const inputToPaste = () => {
+    let userInput = "";
+    setText(userInput);
+  };
 
   const handleOnChange = (event) => {
     setText(event.target.value);
   };
+
   const [text, setText] = useState("Enter text here");
+
   return (
     <div className="flex flex-col justify-center items-center">
+      {/* TextBox */}
       <div className="mx-4 flex justify-center">
         <textarea
           onChange={handleOnChange}
@@ -38,7 +73,9 @@ const TextBox = () => {
           className="relative mt-10 border-2 max-h-72 min-h-0 border-green-400 text-white bg-gray-600 w-[55rem] max-w-screen-lg h-64 p-2 border-lime-100 rounded-lg focus:outline-none focus:shadow-outline-blue-500"
         ></textarea>
       </div>
-      <div className="btn flex space-x-4 mt-4  ">
+
+      {/* Buttons */}
+      <div className="btn flex space-x-4 mt-4 flex-row ">
         <a
           onClick={inputToUpperCase}
           href="#_"
@@ -91,14 +128,14 @@ const TextBox = () => {
             Remove Extra Spaces
           </span>
         </a>
-         <a
-          onClick={inputToUnderscodeAdder}
+        <a
+          onClick={inputToUnderscoreAdder}
           href="#_"
           class="relative inline-flex items-center justify-start px-4 py-2 overflow-hidden font-semibold transition-all bg-green-400 rounded-md hover:bg-gray-900  active:scale-95 group"
         >
           <span class="w-48 h-48 rounded rotate-[-40deg] bg-gray-900 absolute bottom-0 left-0 -translate-x-full ease-out duration-500 transition-all translate-y-full mb-9 ml-9 group-hover:ml-0 group-hover:mb-32 group-hover:translate-x-0"></span>
           <span class="relative w-full text-left text-gray-900 transition-colors duration-300 ease-in-out group-hover:text-green-400">
-            Replace Spaces With Underscodes
+            Replace Spaces With Underscores
           </span>
         </a>
 
@@ -121,7 +158,7 @@ const TextBox = () => {
           <span class="relative w-full text-left text-gray-900 transition-colors duration-300 ease-in-out group-hover:text-green-400">
             Copy
           </span>
-        </a> 
+        </a>
         <a
           onClick={inputToCut}
           href="#_"
@@ -129,7 +166,7 @@ const TextBox = () => {
         >
           <span class="w-48 h-48 rounded rotate-[-40deg] bg-gray-900 absolute bottom-0 left-0 -translate-x-full ease-out duration-500 transition-all translate-y-full mb-9 ml-9 group-hover:ml-0 group-hover:mb-32 group-hover:translate-x-0"></span>
           <span class="relative w-full text-left text-gray-900 transition-colors duration-300 ease-in-out group-hover:text-green-400">
-           Cut
+            Cut
           </span>
         </a>
         <a
@@ -139,11 +176,9 @@ const TextBox = () => {
         >
           <span class="w-48 h-48 rounded rotate-[-40deg] bg-gray-900 absolute bottom-0 left-0 -translate-x-full ease-out duration-500 transition-all translate-y-full mb-9 ml-9 group-hover:ml-0 group-hover:mb-32 group-hover:translate-x-0"></span>
           <span class="relative w-full text-left text-gray-900 transition-colors duration-300 ease-in-out group-hover:text-green-400">
-           Paste
+            Paste
           </span>
         </a>
-
-
       </div>
       <div className="summary mt-3">
         <p>
