@@ -30,29 +30,31 @@ const TextBox = () => {
     setText(userInput);
   };
   const inputToFirstLetterCapital = () => {
-  let userInput = text
-    .toLowerCase()
-    .split(" ")
-    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-    .join(" ");
+    let userInput = text
+      .toLowerCase()
+      .split(" ")
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(" ");
     setText(userInput);
-
   };
   const inputToRemoveExtraSpace = () => {
-    let userInput = text.replace(/\s{2,}/g,' ').trim();
+    let userInput = text.replace(/\s{2,}/g, " ").trim();
     setText(userInput);
   };
   const inputToUnderscoreAdder = () => {
-      let userInput = text.replace(/\s+/g, "_");
-      setText(userInput);
+    let userInput = text.replace(/\s+/g, "_");
+    setText(userInput);
   };
   const inputToCut = () => {
-    let userInput = "";
+    navigator.clipboard.writeText(text);
+    const userInput = "";
     setText(userInput);
   };
   const inputToPaste = () => {
-    let userInput = "";
-    setText(userInput);
+    navigator.clipboard.readText().then((inputX) => {
+      document.getElementById("Textbox").value = inputX;
+    });
+
   };
 
   const handleOnChange = (event) => {
@@ -79,10 +81,10 @@ const TextBox = () => {
         <a
           onClick={inputToUpperCase}
           href="#_"
-          class="relative inline-flex items-center justify-start px-4 py-2 overflow-hidden font-semibold transition-all bg-green-400 rounded-md hover:bg-gray-900  active:scale-95 group"
+          className="relative inline-flex items-center justify-start px-4 py-2 overflow-hidden font-semibold transition-all bg-green-400 rounded-md hover:bg-gray-900  active:scale-95 group"
         >
-          <span class="w-48 h-48 rounded rotate-[-40deg] bg-gray-900 absolute bottom-0 left-0 -translate-x-full ease-out duration-500 transition-all translate-y-full mb-9 ml-9 group-hover:ml-0 group-hover:mb-32 group-hover:translate-x-0"></span>
-          <span class="relative w-full text-left text-gray-900 transition-colors duration-300 ease-in-out group-hover:text-green-400">
+          <span className="w-48 h-48 rounded rotate-[-40deg] bg-gray-900 absolute bottom-0 left-0 -translate-x-full ease-out duration-500 transition-all translate-y-full mb-9 ml-9 group-hover:ml-0 group-hover:mb-32 group-hover:translate-x-0"></span>
+          <span className="relative w-full text-left text-gray-900 transition-colors duration-300 ease-in-out group-hover:text-green-400">
             UpperCase
           </span>
         </a>
@@ -90,10 +92,10 @@ const TextBox = () => {
         <a
           onClick={inputToLowerCase}
           href="#_"
-          class="relative inline-flex items-center justify-start px-4 py-2 overflow-hidden font-semibold transition-all bg-green-400 rounded-md hover:bg-gray-900  active:scale-95 group"
+          className="relative inline-flex items-center justify-start px-4 py-2 overflow-hidden font-semibold transition-all bg-green-400 rounded-md hover:bg-gray-900  active:scale-95 group"
         >
-          <span class="w-48 h-48 rounded rotate-[-40deg] bg-gray-900 absolute bottom-0 left-0 -translate-x-full ease-out duration-500 transition-all translate-y-full mb-9 ml-9 group-hover:ml-0 group-hover:mb-32 group-hover:translate-x-0"></span>
-          <span class="relative w-full text-left text-gray-900 transition-colors duration-300 ease-in-out group-hover:text-green-400">
+          <span className="w-48 h-48 rounded rotate-[-40deg] bg-gray-900 absolute bottom-0 left-0 -translate-x-full ease-out duration-500 transition-all translate-y-full mb-9 ml-9 group-hover:ml-0 group-hover:mb-32 group-hover:translate-x-0"></span>
+          <span className="relative w-full text-left text-gray-900 transition-colors duration-300 ease-in-out group-hover:text-green-400">
             LowerCase
           </span>
         </a>
@@ -101,40 +103,40 @@ const TextBox = () => {
         <a
           onClick={inputToCamelCase}
           href="#_"
-          class="relative inline-flex items-center justify-start px-4 py-2 overflow-hidden font-semibold transition-all bg-green-400 rounded-md hover:bg-gray-900  active:scale-95 group"
+          className="relative inline-flex items-center justify-start px-4 py-2 overflow-hidden font-semibold transition-all bg-green-400 rounded-md hover:bg-gray-900  active:scale-95 group"
         >
-          <span class="w-48 h-48 rounded rotate-[-40deg] bg-gray-900 absolute bottom-0 left-0 -translate-x-full ease-out duration-500 transition-all translate-y-full mb-9 ml-9 group-hover:ml-0 group-hover:mb-32 group-hover:translate-x-0"></span>
-          <span class="relative w-full text-left text-gray-900 transition-colors duration-300 ease-in-out group-hover:text-green-400">
+          <span className="w-48 h-48 rounded rotate-[-40deg] bg-gray-900 absolute bottom-0 left-0 -translate-x-full ease-out duration-500 transition-all translate-y-full mb-9 ml-9 group-hover:ml-0 group-hover:mb-32 group-hover:translate-x-0"></span>
+          <span className="relative w-full text-left text-gray-900 transition-colors duration-300 ease-in-out group-hover:text-green-400">
             CamelCase
           </span>
         </a>
         <a
           onClick={inputToFirstLetterCapital}
           href="#_"
-          class="relative inline-flex items-center justify-start px-4 py-2 overflow-hidden font-semibold transition-all bg-green-400 rounded-md hover:bg-gray-900  active:scale-95 group"
+          className="relative inline-flex items-center justify-start px-4 py-2 overflow-hidden font-semibold transition-all bg-green-400 rounded-md hover:bg-gray-900  active:scale-95 group"
         >
-          <span class="w-48 h-48 rounded rotate-[-40deg] bg-gray-900 absolute bottom-0 left-0 -translate-x-full ease-out duration-500 transition-all translate-y-full mb-9 ml-9 group-hover:ml-0 group-hover:mb-32 group-hover:translate-x-0"></span>
-          <span class="relative w-full text-left text-gray-900 transition-colors duration-300 ease-in-out group-hover:text-green-400">
+          <span className="w-48 h-48 rounded rotate-[-40deg] bg-gray-900 absolute bottom-0 left-0 -translate-x-full ease-out duration-500 transition-all translate-y-full mb-9 ml-9 group-hover:ml-0 group-hover:mb-32 group-hover:translate-x-0"></span>
+          <span className="relative w-full text-left text-gray-900 transition-colors duration-300 ease-in-out group-hover:text-green-400">
             First Letter Capital
           </span>
         </a>
         <a
           onClick={inputToRemoveExtraSpace}
           href="#_"
-          class="relative inline-flex items-center justify-start px-4 py-2 overflow-hidden font-semibold transition-all bg-green-400 rounded-md hover:bg-gray-900  active:scale-95 group"
+          className="relative inline-flex items-center justify-start px-4 py-2 overflow-hidden font-semibold transition-all bg-green-400 rounded-md hover:bg-gray-900  active:scale-95 group"
         >
-          <span class="w-48 h-48 rounded rotate-[-40deg] bg-gray-900 absolute bottom-0 left-0 -translate-x-full ease-out duration-500 transition-all translate-y-full mb-9 ml-9 group-hover:ml-0 group-hover:mb-32 group-hover:translate-x-0"></span>
-          <span class="relative w-full text-left text-gray-900 transition-colors duration-300 ease-in-out group-hover:text-green-400">
+          <span className="w-48 h-48 rounded rotate-[-40deg] bg-gray-900 absolute bottom-0 left-0 -translate-x-full ease-out duration-500 transition-all translate-y-full mb-9 ml-9 group-hover:ml-0 group-hover:mb-32 group-hover:translate-x-0"></span>
+          <span className="relative w-full text-left text-gray-900 transition-colors duration-300 ease-in-out group-hover:text-green-400">
             Remove Extra Spaces
           </span>
         </a>
         <a
           onClick={inputToUnderscoreAdder}
           href="#_"
-          class="relative inline-flex items-center justify-start px-4 py-2 overflow-hidden font-semibold transition-all bg-green-400 rounded-md hover:bg-gray-900  active:scale-95 group"
+          className="relative inline-flex items-center justify-start px-4 py-2 overflow-hidden font-semibold transition-all bg-green-400 rounded-md hover:bg-gray-900  active:scale-95 group"
         >
-          <span class="w-48 h-48 rounded rotate-[-40deg] bg-gray-900 absolute bottom-0 left-0 -translate-x-full ease-out duration-500 transition-all translate-y-full mb-9 ml-9 group-hover:ml-0 group-hover:mb-32 group-hover:translate-x-0"></span>
-          <span class="relative w-full text-left text-gray-900 transition-colors duration-300 ease-in-out group-hover:text-green-400">
+          <span className="w-48 h-48 rounded rotate-[-40deg] bg-gray-900 absolute bottom-0 left-0 -translate-x-full ease-out duration-500 transition-all translate-y-full mb-9 ml-9 group-hover:ml-0 group-hover:mb-32 group-hover:translate-x-0"></span>
+          <span className="relative w-full text-left text-gray-900 transition-colors duration-300 ease-in-out group-hover:text-green-400">
             Replace Spaces With Underscores
           </span>
         </a>
@@ -142,40 +144,40 @@ const TextBox = () => {
         <a
           onClick={inputToCLear}
           href="#_"
-          class="relative inline-flex items-center justify-start px-4 py-2 overflow-hidden font-semibold transition-all bg-green-400 rounded-md hover:bg-gray-900  active:scale-95 group"
+          className="relative inline-flex items-center justify-start px-4 py-2 overflow-hidden font-semibold transition-all bg-green-400 rounded-md hover:bg-gray-900  active:scale-95 group"
         >
-          <span class="w-48 h-48 rounded rotate-[-40deg] bg-gray-900 absolute bottom-0 left-0 -translate-x-full ease-out duration-500 transition-all translate-y-full mb-9 ml-9 group-hover:ml-0 group-hover:mb-32 group-hover:translate-x-0"></span>
-          <span class="relative w-full text-left text-gray-900 transition-colors duration-300 ease-in-out group-hover:text-green-400">
+          <span className="w-48 h-48 rounded rotate-[-40deg] bg-gray-900 absolute bottom-0 left-0 -translate-x-full ease-out duration-500 transition-all translate-y-full mb-9 ml-9 group-hover:ml-0 group-hover:mb-32 group-hover:translate-x-0"></span>
+          <span className="relative w-full text-left text-gray-900 transition-colors duration-300 ease-in-out group-hover:text-green-400">
             Clear
           </span>
         </a>
         <a
           onClick={inputToClipboard}
           href="#_"
-          class="relative inline-flex items-center justify-start px-4 py-2 overflow-hidden font-semibold transition-all bg-green-400 rounded-md hover:bg-gray-900  active:scale-95 group"
+          className="relative inline-flex items-center justify-start px-4 py-2 overflow-hidden font-semibold transition-all bg-green-400 rounded-md hover:bg-gray-900  active:scale-95 group"
         >
-          <span class="w-48 h-48 rounded rotate-[-40deg] bg-gray-900 absolute bottom-0 left-0 -translate-x-full ease-out duration-500 transition-all translate-y-full mb-9 ml-9 group-hover:ml-0 group-hover:mb-32 group-hover:translate-x-0"></span>
-          <span class="relative w-full text-left text-gray-900 transition-colors duration-300 ease-in-out group-hover:text-green-400">
+          <span className="w-48 h-48 rounded rotate-[-40deg] bg-gray-900 absolute bottom-0 left-0 -translate-x-full ease-out duration-500 transition-all translate-y-full mb-9 ml-9 group-hover:ml-0 group-hover:mb-32 group-hover:translate-x-0"></span>
+          <span className="relative w-full text-left text-gray-900 transition-colors duration-300 ease-in-out group-hover:text-green-400">
             Copy
           </span>
         </a>
         <a
           onClick={inputToCut}
           href="#_"
-          class="relative inline-flex items-center justify-start px-4 py-2 overflow-hidden font-semibold transition-all bg-green-400 rounded-md hover:bg-gray-900  active:scale-95 group"
+          className="relative inline-flex items-center justify-start px-4 py-2 overflow-hidden font-semibold transition-all bg-green-400 rounded-md hover:bg-gray-900  active:scale-95 group"
         >
-          <span class="w-48 h-48 rounded rotate-[-40deg] bg-gray-900 absolute bottom-0 left-0 -translate-x-full ease-out duration-500 transition-all translate-y-full mb-9 ml-9 group-hover:ml-0 group-hover:mb-32 group-hover:translate-x-0"></span>
-          <span class="relative w-full text-left text-gray-900 transition-colors duration-300 ease-in-out group-hover:text-green-400">
+          <span className="w-48 h-48 rounded rotate-[-40deg] bg-gray-900 absolute bottom-0 left-0 -translate-x-full ease-out duration-500 transition-all translate-y-full mb-9 ml-9 group-hover:ml-0 group-hover:mb-32 group-hover:translate-x-0"></span>
+          <span className="relative w-full text-left text-gray-900 transition-colors duration-300 ease-in-out group-hover:text-green-400">
             Cut
           </span>
         </a>
         <a
           onClick={inputToPaste}
           href="#_"
-          class="relative inline-flex items-center justify-start px-4 py-2 overflow-hidden font-semibold transition-all bg-green-400 rounded-md hover:bg-gray-900  active:scale-95 group"
+          className="relative inline-flex items-center justify-start px-4 py-2 overflow-hidden font-semibold transition-all bg-green-400 rounded-md hover:bg-gray-900  active:scale-95 group"
         >
-          <span class="w-48 h-48 rounded rotate-[-40deg] bg-gray-900 absolute bottom-0 left-0 -translate-x-full ease-out duration-500 transition-all translate-y-full mb-9 ml-9 group-hover:ml-0 group-hover:mb-32 group-hover:translate-x-0"></span>
-          <span class="relative w-full text-left text-gray-900 transition-colors duration-300 ease-in-out group-hover:text-green-400">
+          <span className="w-48 h-48 rounded rotate-[-40deg] bg-gray-900 absolute bottom-0 left-0 -translate-x-full ease-out duration-500 transition-all translate-y-full mb-9 ml-9 group-hover:ml-0 group-hover:mb-32 group-hover:translate-x-0"></span>
+          <span className="relative w-full text-left text-gray-900 transition-colors duration-300 ease-in-out group-hover:text-green-400">
             Paste
           </span>
         </a>
