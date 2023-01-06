@@ -51,11 +51,9 @@ const TextBox = () => {
     setText(userInput);
   };
   const inputToPaste = () => {
-  
-     navigator.clipboard.readText().then((inputX) => {
-       setText(inputX);
-     });
- 
+    navigator.clipboard.readText().then((inputX) => {
+      setText(inputX);
+    });
   };
 
   const handleOnChange = (event) => {
@@ -68,115 +66,61 @@ const TextBox = () => {
     <div className="flex flex-col justify-center items-center">
       {/* TextBox */}
       <div className="mx-4 flex justify-center">
-        <textarea
-          onChange={handleOnChange}
-          value={text}
-          id="Textbox"
-          rows="10"
-          className="relative mt-10 border-4 max-h-72 min-h-0 border-green-400 text-white bg-gray-600 w-[55rem] max-w-screen-lg h-64 p-2 border-lime-100 rounded-lg focus:outline-none focus:shadow-outline-blue-500"
-        ></textarea>
+        <form action="">
+          <textarea
+            onChange={handleOnChange}
+            value={text}
+            rows="10"
+            className="relative mt-10 border-4 max-h-72 min-h-0 border-green-400 text-white bg-gray-500 w-[55rem] max-w-screen-lg h-64 p-2 border-lime-100 rounded-lg focus:outline-none focus:shadow-outline-blue-500"
+          ></textarea>
+        </form>
       </div>
 
       {/* Buttons */}
-      <div className="flex space-x-6 mt-6 flex-row">
-        <a
-          onClick={inputToUpperCase}
-          href="#_"
-          className="btnbody group"
-        >
+      <div className="relative flex-wrap w-[55rem] space-x-4  space-y-4 mt-6 ">
+        <button onClick={inputToUpperCase} className="btnbody group">
           <span className="overlaping-span"></span>
-          <span className="btn-span">
-            UpperCase
-          </span>
-        </a>
+          <span className="btn-span">UpperCase</span>
+        </button>
 
-        <a
-          onClick={inputToLowerCase}
-          href="#_"
-          className="btnbody group"
-        >
+        <button onClick={inputToLowerCase} className="btnbody group">
           <span className="overlaping-span"></span>
-          <span className="btn-span">
-            LowerCase
-          </span>
-        </a>
+          <span className="btn-span">LowerCase</span>
+        </button>
 
-        <a
-          onClick={inputToCamelCase}
-          href="#_"
-          className="btnbody group"
-        >
+        <button onClick={inputToCamelCase} className="btnbody group">
           <span className="overlaping-span"></span>
-          <span className="btn-span">
-            CamelCase
-          </span>
-        </a>
-        <a
-          onClick={inputToFirstLetterCapital}
-          href="#_"
-          className="btnbody group"
-        >
+          <span className="btn-span">CamelCase</span>
+        </button>
+        <button onClick={inputToFirstLetterCapital} className="btnbody group">
           <span className="overlaping-span"></span>
-          <span className="btn-span">
-            First Letter Capital
-          </span>
-        </a>
-        <a
-          onClick={inputToRemoveExtraSpace}
-          href="#_"
-          className="btnbody group"
-        >
+          <span className="btn-span">TitleCase</span>
+        </button>
+        <button onClick={inputToRemoveExtraSpace} className="btnbody group">
           <span className="overlaping-span"></span>
-          <span className="btn-span">
-            Remove Extra Spaces
-          </span>
-        </a>
-        <br />
-        <a
-          onClick={inputToUnderscoreAdder}
-          href="#_"
-          className="btnbody group"
-        >
+          <span className="btn-span">Space Remover</span>
+        </button>
+        <button onClick={inputToUnderscoreAdder} className="btnbody group">
           <span className="overlaping-span"></span>
-          <span className="btn-span">
-            Replace Spaces With Underscores
-          </span>
-        </a>
+          <span className="btn-span">Spaces = Underscores</span>
+        </button>
 
-        <a
-          onClick={inputToCLear}
-          href="#_"
-          className="btnbody group"
-        >
+        <button onClick={inputToCLear} className="btnbody group">
           <span className="overlaping-span"></span>
-          <span className="btn-span">
-            Clear
-          </span>
-        </a>
-        <a onClick={inputToClipboard} href="#_" className="btnbody group">
+          <span className="btn-span">Clear</span>
+        </button>
+        <button onClick={inputToClipboard} className="btnbody group">
           <span className="overlaping-span"></span>
           <span className="btn-span">Copy</span>
-        </a>
-        <a
-          onClick={inputToCut}
-          href="#_"
-          className="btnbody group"
-        >
+        </button>
+        <button onClick={inputToCut} className="btnbody group">
           <span className="overlaping-span"></span>
-          <span className="btn-span">
-            Cut
-          </span>
-        </a>
-        <a
-          onClick={inputToPaste}
-          href="#_"
-          className="btnbody group"
-        >
+          <span className="btn-span">Cut</span>
+        </button>
+        <button onClick={inputToPaste} className="btnbody group">
           <span className="overlaping-span"></span>
-          <span className="btn-span">
-            Paste
-          </span>
-        </a>
+          <span className="btn-span">Paste</span>
+        </button>
       </div>
       <div className="summary mt-3">
         <p>
