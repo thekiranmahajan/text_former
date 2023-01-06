@@ -51,10 +51,11 @@ const TextBox = () => {
     setText(userInput);
   };
   const inputToPaste = () => {
-    navigator.clipboard.readText().then((inputX) => {
-      document.getElementById("Textbox").value = inputX;
-    });
-
+  
+     navigator.clipboard.readText().then((inputX) => {
+       setText(inputX);
+     });
+ 
   };
 
   const handleOnChange = (event) => {
@@ -77,14 +78,14 @@ const TextBox = () => {
       </div>
 
       {/* Buttons */}
-      <div className="flex space-x-6 mt-6 flex-row w-min ">
+      <div className="flex space-x-6 mt-6 flex-row">
         <a
           onClick={inputToUpperCase}
           href="#_"
-          className="relative inline-flex items-center justify-start px-4 py-2 overflow-hidden font-semibold transition-all bg-green-400 rounded-md hover:bg-gray-900  active:scale-95 group"
+          className="btnbody group"
         >
-          <span className="w-48 h-48 rounded rotate-[-40deg] bg-gray-900 absolute bottom-0 left-0 -translate-x-full ease-out duration-500 transition-all translate-y-full mb-9 ml-9 group-hover:ml-0 group-hover:mb-32 group-hover:translate-x-0"></span>
-          <span className="relative w-full text-left text-gray-900 transition-colors duration-300 ease-in-out group-hover:text-green-400">
+          <span className="overlaping-span"></span>
+          <span className="btn-span">
             UpperCase
           </span>
         </a>
@@ -92,10 +93,10 @@ const TextBox = () => {
         <a
           onClick={inputToLowerCase}
           href="#_"
-          className="relative inline-flex items-center justify-start px-4 py-2 overflow-hidden font-semibold transition-all bg-green-400 rounded-md hover:bg-gray-900  active:scale-95 group"
+          className="btnbody group"
         >
-          <span className="w-48 h-48 rounded rotate-[-40deg] bg-gray-900 absolute bottom-0 left-0 -translate-x-full ease-out duration-500 transition-all translate-y-full mb-9 ml-9 group-hover:ml-0 group-hover:mb-32 group-hover:translate-x-0"></span>
-          <span className="relative w-full text-left text-gray-900 transition-colors duration-300 ease-in-out group-hover:text-green-400">
+          <span className="overlaping-span"></span>
+          <span className="btn-span">
             LowerCase
           </span>
         </a>
@@ -103,30 +104,30 @@ const TextBox = () => {
         <a
           onClick={inputToCamelCase}
           href="#_"
-          className="relative inline-flex items-center justify-start px-4 py-2 overflow-hidden font-semibold transition-all bg-green-400 rounded-md hover:bg-gray-900  active:scale-95 group"
+          className="btnbody group"
         >
-          <span className="w-48 h-48 rounded rotate-[-40deg] bg-gray-900 absolute bottom-0 left-0 -translate-x-full ease-out duration-500 transition-all translate-y-full mb-9 ml-9 group-hover:ml-0 group-hover:mb-32 group-hover:translate-x-0"></span>
-          <span className="relative w-full text-left text-gray-900 transition-colors duration-300 ease-in-out group-hover:text-green-400">
+          <span className="overlaping-span"></span>
+          <span className="btn-span">
             CamelCase
           </span>
         </a>
         <a
           onClick={inputToFirstLetterCapital}
           href="#_"
-          className="relative inline-flex items-center justify-start px-4 py-2 overflow-hidden font-semibold transition-all bg-green-400 rounded-md hover:bg-gray-900  active:scale-95 group"
+          className="btnbody group"
         >
-          <span className="w-48 h-48 rounded rotate-[-40deg] bg-gray-900 absolute bottom-0 left-0 -translate-x-full ease-out duration-500 transition-all translate-y-full mb-9 ml-9 group-hover:ml-0 group-hover:mb-32 group-hover:translate-x-0"></span>
-          <span className="relative w-full text-left text-gray-900 transition-colors duration-300 ease-in-out group-hover:text-green-400">
+          <span className="overlaping-span"></span>
+          <span className="btn-span">
             First Letter Capital
           </span>
         </a>
         <a
           onClick={inputToRemoveExtraSpace}
           href="#_"
-          className="relative inline-flex items-center justify-start px-4 py-2 overflow-hidden font-semibold transition-all bg-green-400 rounded-md hover:bg-gray-900  active:scale-95 group"
+          className="btnbody group"
         >
-          <span className="w-48 h-48 rounded rotate-[-40deg] bg-gray-900 absolute bottom-0 left-0 -translate-x-full ease-out duration-500 transition-all translate-y-full mb-9 ml-9 group-hover:ml-0 group-hover:mb-32 group-hover:translate-x-0"></span>
-          <span className="relative w-full text-left text-gray-900 transition-colors duration-300 ease-in-out group-hover:text-green-400">
+          <span className="overlaping-span"></span>
+          <span className="btn-span">
             Remove Extra Spaces
           </span>
         </a>
@@ -134,10 +135,10 @@ const TextBox = () => {
         <a
           onClick={inputToUnderscoreAdder}
           href="#_"
-          className="relative inline-flex items-center justify-start px-4 py-2 overflow-hidden font-semibold transition-all bg-green-400 rounded-md hover:bg-gray-900  active:scale-95 group"
+          className="btnbody group"
         >
-          <span className="w-48 h-48 rounded rotate-[-40deg] bg-gray-900 absolute bottom-0 left-0 -translate-x-full ease-out duration-500 transition-all translate-y-full mb-9 ml-9 group-hover:ml-0 group-hover:mb-32 group-hover:translate-x-0"></span>
-          <span className="relative w-full text-left text-gray-900 transition-colors duration-300 ease-in-out group-hover:text-green-400">
+          <span className="overlaping-span"></span>
+          <span className="btn-span">
             Replace Spaces With Underscores
           </span>
         </a>
@@ -145,40 +146,34 @@ const TextBox = () => {
         <a
           onClick={inputToCLear}
           href="#_"
-          className="relative inline-flex items-center justify-start px-4 py-2 overflow-hidden font-semibold transition-all bg-green-400 rounded-md hover:bg-gray-900  active:scale-95 group"
+          className="btnbody group"
         >
-          <span className="w-48 h-48 rounded rotate-[-40deg] bg-gray-900 absolute bottom-0 left-0 -translate-x-full ease-out duration-500 transition-all translate-y-full mb-9 ml-9 group-hover:ml-0 group-hover:mb-32 group-hover:translate-x-0"></span>
-          <span className="relative w-full text-left text-gray-900 transition-colors duration-300 ease-in-out group-hover:text-green-400">
+          <span className="overlaping-span"></span>
+          <span className="btn-span">
             Clear
           </span>
         </a>
-        <a
-          onClick={inputToClipboard}
-          href="#_"
-          className="relative inline-flex items-center justify-start px-4 py-2 overflow-hidden font-semibold transition-all bg-green-400 rounded-md hover:bg-gray-900  active:scale-95 group"
-        >
-          <span className="w-48 h-48 rounded rotate-[-40deg] bg-gray-900 absolute bottom-0 left-0 -translate-x-full ease-out duration-500 transition-all translate-y-full mb-9 ml-9 group-hover:ml-0 group-hover:mb-32 group-hover:translate-x-0"></span>
-          <span className="relative w-full text-left text-gray-900 transition-colors duration-300 ease-in-out group-hover:text-green-400">
-            Copy
-          </span>
+        <a onClick={inputToClipboard} href="#_" className="btnbody group">
+          <span className="overlaping-span"></span>
+          <span className="btn-span">Copy</span>
         </a>
         <a
           onClick={inputToCut}
           href="#_"
-          className="relative inline-flex items-center justify-start px-4 py-2 overflow-hidden font-semibold transition-all bg-green-400 rounded-md hover:bg-gray-900  active:scale-95 group"
+          className="btnbody group"
         >
-          <span className="w-48 h-48 rounded rotate-[-40deg] bg-gray-900 absolute bottom-0 left-0 -translate-x-full ease-out duration-500 transition-all translate-y-full mb-9 ml-9 group-hover:ml-0 group-hover:mb-32 group-hover:translate-x-0"></span>
-          <span className="relative w-full text-left text-gray-900 transition-colors duration-300 ease-in-out group-hover:text-green-400">
+          <span className="overlaping-span"></span>
+          <span className="btn-span">
             Cut
           </span>
         </a>
         <a
           onClick={inputToPaste}
           href="#_"
-          className="relative inline-flex items-center justify-start px-4 py-2 overflow-hidden font-semibold transition-all bg-green-400 rounded-md hover:bg-gray-900  active:scale-95 group"
+          className="btnbody group"
         >
-          <span className="w-48 h-48 rounded rotate-[-40deg] bg-gray-900 absolute bottom-0 left-0 -translate-x-full ease-out duration-500 transition-all translate-y-full mb-9 ml-9 group-hover:ml-0 group-hover:mb-32 group-hover:translate-x-0"></span>
-          <span className="relative w-full text-left text-gray-900 transition-colors duration-300 ease-in-out group-hover:text-green-400">
+          <span className="overlaping-span"></span>
+          <span className="btn-span">
             Paste
           </span>
         </a>
