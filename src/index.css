@@ -3,19 +3,18 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: 'Poppins', sans-serif;
-  src:  url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+  font-family: "Poppins", sans-serif;
+  src: url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 }
 
 @layer components {
-
-  .overlaping-span{
-    @apply w-48 h-48 rounded rotate-[-40deg] bg-gray-900 absolute bottom-0 left-0 -translate-x-full ease-out duration-500 transition-all translate-y-full mb-9 ml-9 group-hover:ml-0 group-hover:mb-32 group-hover:translate-x-0
+  .overlaping-span {
+    @apply w-48 h-48 rounded rotate-[-40deg] bg-gray-900 absolute bottom-0 left-0 -translate-x-full ease-out duration-500 transition-all translate-y-full mb-9 ml-9 group-hover:ml-0 group-hover:mb-32 group-hover:translate-x-0;
   }
-.btn-span{
-  @apply relative w-full text-left text-gray-900 transition-colors duration-300 ease-in-out group-hover:text-green-400
-}
-.btnbody{
-@apply relative inline-flex items-center justify-start px-4 py-2 overflow-hidden font-semibold transition-all bg-green-400 rounded-md hover:bg-gray-900  active:scale-95 
-}
+  .btn-span {
+    @apply relative w-full text-left text-gray-900 transition-colors duration-300 ease-in-out group-hover:text-green-400;
+  }
+  .btnbody {
+    @apply relative w-32 inline-flex items-center justify-start px-5 py-3 overflow-hidden font-semibold transition-all bg-green-400 rounded-md hover:bg-gray-900  active:scale-90;
+  }
 }
