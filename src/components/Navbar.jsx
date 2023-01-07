@@ -8,7 +8,7 @@ const Navbar = () => {
       <a href="/" className=" ml-6">
         <AllIcons icon={<SiHomebridge size="28" />} text={"Home"} />
       </a>
-      <div className="flex select-none ">
+      <div className="flex select-none  ">
         <span className="rounded-lg text-green-400 transition-all duration-300 hover:text-white mr-3">
           {<RiInputCursorMove size="25" />}
         </span>
