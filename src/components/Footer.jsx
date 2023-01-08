@@ -2,13 +2,12 @@ import React from 'react'
 
 function Footer() {
   return (
-   <footer>
-   <p class="footer-heart">
-  Made with <g-emoji class="g-emoji" alias="heart" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/2764.png">
-<img class="emoji" alt="heart" height="20" width="20" src="https://github.githubassets.com/images/icons/emoji/unicode/2764.png"/></g-emoji> by <a href="https://armin.id">Arminisme</a>
-</p>
-   </footer>
-  )
+    <footer className="bg-gray-900 text-white p-10 text-center">
+      <h1>
+        made with ❤️ by <span className='font-semibold'> Kiran Mahajan</span>
+      </h1>
+    </footer>
+  );
 }
 
 export default Footer
