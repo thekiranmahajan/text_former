@@ -82,10 +82,10 @@ const TextBox = () => {
       <div
         className="summary sm:mt-10 h-fit
       
-      mt-14 mb-3 lg:mb-10 flex flex-wrap bg-gray-900 text-white w-screen justify-evenly overflow-hidden py-2 lg:mt-32 "
+      mt-14 mb-3 lg:mb-10 flex flex-wrap bg-gray-900 text-white w-screen justify-evenly overflow-hidden lg:py-1 p-2 lg:mt-32 "
       >
         <div className="words">
-          <span className="bg-green-400 p-2 rounded-md w-fit text-gray-900 lg:w-screen shadow-md shadow-white">
+          <span className="bg-green-400 p-2 rounded-md w-fit text-gray-900 lg:w-screen shadow-md lg:shadow-sm shadow-white">
             {
               text.split(/\s+/).filter((element) => {
                 return element.length !== 0;
@@ -97,7 +97,7 @@ const TextBox = () => {
         </div>
         <div className="char">
           {" "}
-          <span className="bg-green-400 p-2 rounded-md w-fit text-gray-900 shadow-md shadow-white ">
+          <span className="bg-green-400 p-2 rounded-md w-fit text-gray-900 shadow-md lg:shadow-sm shadow-white ">
             {" "}
             {text.length}
           </span>{" "}
@@ -166,7 +166,7 @@ const TextBox = () => {
       <h2 className="text-center mt-36 font-extrabold lg:font-semibold text-4xl  bg-gray-900 text-white lg:w-screen p-2 w-screen">
         About Us
       </h2>
-      <div className="relative mt-8 lg:mt-10 lg:w-[100vh] sm:w-screen sm:mt-64 w-72 ">
+      <div className="relative mt-8 lg:mt-10 lg:mb-10 lg:w-[100vh] sm:w-screen sm:mt-64 w-72 ">
         <p className="text-center">
           Welcome to our text manipulation site{" "}
           <span className="bg-green-400 p-1 rounded-sm text-gray-900 shadow-sm shadow-gray-600">
